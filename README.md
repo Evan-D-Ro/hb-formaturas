@@ -1,73 +1,85 @@
-# Welcome to your Lovable project
+HB Formaturas – Landing Page
 
-## Project info
+Landing page institucional desenvolvida para a HB Formaturas, com foco em conversão via WhatsApp, design moderno, limpo e responsivo.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+O projeto foi criado para apresentar os serviços da empresa, transmitir credibilidade e facilitar o contato com clientes interessados em formaturas e eventos.
 
-## How can I edit this code?
 
-There are several ways of editing your application.
+INFORMAÇÕES DO PROJETO
 
-**Use Lovable**
+Empresa: HB Formaturas
+Objetivo: Divulgação institucional e captação de contatos via WhatsApp
+Estilo: Moderno, limpo e profissional
+Paleta de cores: Preto, Azul e Branco
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
 
-Changes made via Lovable will be committed automatically to this repo.
+TECNOLOGIAS UTILIZADAS
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
+Este projeto foi desenvolvido utilizando:
 
 - Vite
-- TypeScript
 - React
-- shadcn-ui
+- TypeScript
 - Tailwind CSS
+- shadcn/ui
 
-## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+ESTRUTURA DO PROJETO
 
-## Can I connect a custom domain to my Lovable project?
+O projeto segue uma estrutura padrão para aplicações React modernas, com foco em organização, performance e fácil manutenção.
 
-Yes, you can!
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+COMO RODAR O PROJETO LOCALMENTE
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Pré-requisitos:
+- Node.js (recomendado versão LTS)
+- npm ou yarn
+
+
+Passo a passo:
+
+1. Clone o repositório
+git clone <URL_DO_REPOSITORIO>
+
+2. Acesse a pasta do projeto
+cd <NOME_DO_PROJETO>
+
+3. Instale as dependências
+npm install
+
+4. Inicie o servidor de desenvolvimento
+npm run dev
+
+
+Após iniciar, o projeto estará disponível no navegador em:
+http://localhost:5173
+(ou na porta indicada no terminal)
+
+
+RESPONSIVIDADE
+
+A landing page foi desenvolvida com abordagem mobile-first, garantindo ótima experiência em:
+
+- Smartphones
+- Tablets
+- Desktops
+
+
+CONTATO DA EMPRESA
+
+WhatsApp: (44) 98814-3049
+E-mail: atendimento@hbformaturas.com.br
+
+
+DADOS DA EMPRESA
+
+HB FORMATURAS LTDA
+CNPJ: 53.177.377/0001-87
+Endereço: R. Aparecido Scandelai, 2255 – Jardim Cristo Rei
+
+
+OBSERVAÇÕES
+
+- O site não utiliza formulários, apenas botões direcionando para o WhatsApp.
+- As imagens utilizadas são de banco de imagens.
+- O layout foi desenvolvido pensando em futuras expansões de conteúdo.

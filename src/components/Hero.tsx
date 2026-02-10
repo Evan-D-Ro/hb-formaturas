@@ -52,7 +52,7 @@ const Hero = () => {
 
       {/* Navbar */}
       <nav className="absolute top-0 left-0 right-0 z-30 flex items-center justify-between px-6 py-5 md:px-12 lg:px-20">
-        <img src={logoHorizontal} alt="HB Formaturas" className="h-14 md:h-16 lg:h-20 brightness-0 invert" />
+        <img src={logoHorizontal} alt="HB Formaturas" className="h-20 md:h-16 lg:h-20 brightness-0 invert" />
 
         {/* Desktop nav links */}
         <div className="hidden md:flex items-center gap-8">
@@ -157,9 +157,8 @@ const Hero = () => {
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              i === current ? "w-8 bg-primary" : "w-2 bg-dark-surface-foreground/40"
-            }`}
+            className={`h-2 rounded-full transition-all duration-300 ${i === current ? "w-8 bg-primary" : "w-2 bg-dark-surface-foreground/40"
+              }`}
             aria-label={`Slide ${i + 1}`}
           />
         ))}
