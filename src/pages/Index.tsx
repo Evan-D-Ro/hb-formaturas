@@ -6,19 +6,22 @@ import Gallery from "@/components/Gallery";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import WhatsAppFab from "@/components/WhatsAppFab";
-
+import Header from "@/components/Header";
 const Index = () => {
   return (
-    <main>
-      <Hero />
-      <About />
-      <Differentials />
-      <Services />
-      <Gallery />
-      <CTASection />
+    <div className="min-h-screen bg-background">
+      {/* <Header /> */}
+      <main>
+        <Hero />
+        <About />
+        <Differentials />
+        <Services />
+        <Gallery />
+        <CTASection />
+      </main>
       <Footer />
       <WhatsAppFab />
-    </main>
+    </div>
   );
 };
 

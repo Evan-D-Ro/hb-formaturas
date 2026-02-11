@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, GraduationCap } from "lucide-react";
 import galleryAlbum from "@/assets/gallery-album.jpg";
 import galleryCeremony from "@/assets/gallery-ceremony.jpg";
 import galleryParty from "@/assets/gallery-party.jpg";
@@ -17,11 +17,26 @@ const images = [
   { src: galleryGraduate, alt: "Formanda com diploma" },
 ];
 
+const phrases = [
+  "inspiram",
+  "ficam para sempre",
+  "contam histórias",
+  "marcam vidas"
+];
+
 const Gallery = () => {
   const [selected, setSelected] = useState<number | null>(null);
+  const [index, setIndex] = useState(0);
 
+  // Efeito para alternar as frases a cada 3 segundos
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % phrases.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
   return (
-    <section id="galeria" className="section-alt py-20 lg:py-28">
+    <section id="galeria" className="section-alt py-20 lg:py-20">
       <div className="container mx-auto px-6 md:px-12 lg:px-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -30,12 +45,49 @@ const Gallery = () => {
           transition={{ duration: 0.6 }}
           className="mx-auto mb-14 max-w-2xl text-center"
         >
-          <p className="font-heading text-sm font-bold uppercase tracking-widest text-primary">
-            Galeria
-          </p>
-          <h2 className="mt-3 font-heading text-3xl font-extrabold text-foreground md:text-4xl">
-            Momentos que inspiram
+          {/* Badge Galeria */}
+          <div className="flex justify-center mb-6">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 shadow-sm"
+            >
+              <GraduationCap className="w-4 h-4 text-primary" />
+              <span className="font-heading text-xs font-bold uppercase tracking-widest text-primary">
+                Galeria
+              </span>
+            </motion.div>
+          </div>
+
+          {/* Título com Efeito de Digitação/Troca */}
+          <h2 className="mt-3 font-heading text-3xl font-extrabold text-foreground md:text-4xl text-center">
+            <span className="mr-2">Momentos que</span>
+
+            <span className="relative inline-flex items-baseline text-blue-600">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={phrases[index]}
+                  initial={{ width: 0 }}
+                  animate={{ width: "auto" }}
+                  exit={{ width: 0 }}
+                  transition={{ duration: 0.6 }}
+                  className="overflow-hidden whitespace-nowrap inline-block"
+                >
+                  {phrases[index]}
+                </motion.span>
+              </AnimatePresence>
+
+              <motion.span
+                animate={{ opacity: [1, 0] }}
+                transition={{ duration: 0.8, repeat: Infinity, repeatType: "reverse" }}
+                className="ml-1 inline-block w-[2px] bg-blue-600 self-center"
+                style={{ height: "0.9em" }}
+              />
+
+            </span>
           </h2>
+
         </motion.div>
 
         <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
@@ -46,9 +98,8 @@ const Gallery = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className={`group cursor-pointer overflow-hidden rounded-xl ${
-                i === 0 ? "col-span-2 row-span-2" : ""
-              }`}
+              className={`group cursor-pointer overflow-hidden rounded-xl ${i === 0 ? "col-span-2 row-span-2" : ""
+                }`}
               onClick={() => setSelected(i)}
             >
               <img

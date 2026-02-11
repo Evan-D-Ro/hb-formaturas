@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Calendar, BookOpen, Camera, Sparkles, ClipboardCheck, ArrowRight } from "lucide-react";
+import { Calendar, BookOpen, Camera, Sparkles, ClipboardCheck, ArrowRight, GraduationCap } from "lucide-react";
 
 const services = [
   {
@@ -31,7 +31,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="servicos" className="section-alt py-20 lg:py-28">
+    <section id="solucoes" className="section-alt pt-20 lg:pt-28">
       <div className="container mx-auto px-6 md:px-12 lg:px-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -40,9 +40,20 @@ const Services = () => {
           transition={{ duration: 0.6 }}
           className="mx-auto mb-14 max-w-2xl text-center"
         >
-          <p className="font-heading text-sm font-bold uppercase tracking-widest text-primary">
-            Soluções
-          </p>
+          {/* Badge "Sobre Nós" Estilizada */}
+          <div className="flex justify-center mb-6">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 shadow-sm"
+            >
+              <GraduationCap className="w-4 h-4 text-primary" />
+              <span className="font-heading text-xs font-bold uppercase tracking-widest text-primary">
+                Soluções
+              </span>
+            </motion.div>
+          </div>
           <h2 className="mt-3 font-heading text-3xl font-extrabold text-foreground md:text-4xl">
             Tudo que sua formatura precisa
           </h2>
@@ -90,6 +101,18 @@ const Services = () => {
             </motion.div>
           ))}
         </div>
+      </div>
+
+      <div className="relative w-full flex items-center justify-center mt-16 container">
+        {/* Linhas à esquerda e à direita */}
+        <div className="flex-grow h-[2px] bg-gradient-to-r from-transparent via-primary/60 to-primary rounded-full" />
+
+        {/* Ícone central */}
+        <div className="mx-4 bg-background rounded-full p-3 shadow-md border border-primary/20">
+          <GraduationCap className="w-6 h-6 text-primary" />
+        </div>
+
+        <div className="flex-grow h-[2px] bg-gradient-to-l from-transparent via-primary/60 to-primary rounded-full" />
       </div>
     </section>
   );

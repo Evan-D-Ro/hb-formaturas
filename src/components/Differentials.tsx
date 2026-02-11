@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Users, Award, Clock, ShieldCheck } from "lucide-react";
+import { Users, Award, Clock, ShieldCheck, GraduationCap } from "lucide-react";
 import differentialsBg from "@/assets/differentials-bg.jpg";
 
 const items = [
@@ -34,12 +34,23 @@ const Differentials = () => {
           transition={{ duration: 0.6 }}
           className="mx-auto mb-14 max-w-2xl text-center"
         >
-          <p className="font-heading text-sm font-bold uppercase tracking-widest text-primary-foreground/70">
-            Diferenciais
-          </p>
+          {/* Badge "Sobre Nós" Estilizada */}
+          <div className="flex justify-center mb-6">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 shadow-sm"
+            >
+              <GraduationCap className="w-4 h-4 text-white" />
+              <span className="font-heading text-xs font-bold uppercase tracking-widest text-white">
+                Diferenciais
+              </span>
+            </motion.div>
+          </div>
           <h2 className="mt-3 font-heading text-3xl font-extrabold text-primary-foreground md:text-4xl">
             Por que escolher a{" "}
-            <span className="text-gradient-blue">HB Formaturas?</span>
+            <br /><span className="text-gradient-blue">HB Formaturas?</span>
           </h2>
           <p className="mt-4 text-base text-primary-foreground/70">
             Cada detalhe é pensado para que sua formatura seja perfeita e inesquecível.
